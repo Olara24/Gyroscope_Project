@@ -1,4 +1,5 @@
 from flask import Flask
+import json
 
 app = Flask(__name__)
 
@@ -30,6 +31,18 @@ def data():
         </table>
         """.format(text_td)
         return text_data
+
+@app.route('/get_data.json')
+def get_data():
+    response= []
+    with open('/home/pi/Gyroscope_Project/data.csv') as fin:
+        data= fin.readline()
+        text_td= " "
+        for line in fin:
+            Gx,Gy,Gz,Ax,Ay,Az= line.split(",")
+            response.append([Gx,Gy,Gz,Ax,Ay,Az])
+        jsonStr = json.dumps(response)
+        return jsonStr
             
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
