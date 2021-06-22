@@ -20,13 +20,13 @@ def MPU_Init():
 	bus.write_byte_data(Device_Address, SMPLRT_DIV, 7)
 	
 	#Write to power management register
-	bus.write_byte_data(Device_Address, PWR_MGMT_1, 1)
+	bus.write_byte_data(Device_Address, PWR_MGMT_1, 0)
 	
 	#Write to Configuration register
-	bus.write_byte_data(Device_Address, CONFIG, 0)
+	bus.write_byte_data(Device_Address, CONFIG, 20)
 	
 	#Write to Gyro configuration register
-	bus.write_byte_data(Device_Address, GYRO_CONFIG, 24)
+	bus.write_byte_data(Device_Address, GYRO_CONFIG, 0)
 	
 	#Write to interrupt enable register
 	bus.write_byte_data(Device_Address, INT_ENABLE, 1)
@@ -74,5 +74,5 @@ while True:
 	Gz = gyro_z/131.0
 	
 
-	print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
+    print ("{0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}".format(Gx, Gy, Gz, Ax, Ay, Az))
 	sleep(1)
