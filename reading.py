@@ -50,8 +50,6 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
-print (" Reading Data of Gyroscope and Accelerometer")
-
 while True:
 	
 	#Read Accelerometer raw value
@@ -74,5 +72,5 @@ while True:
 	Gz = gyro_z/131.0
 	
 
-    print ("{0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}  ,  {0:.2f}".format(Gx, Gy, Gz, Ax, Ay, Az))
+	print ("{0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}".format(Gx, Gy, Gz, Ax, Ay, Az))
 	sleep(1)
