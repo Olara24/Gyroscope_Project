@@ -5,6 +5,24 @@ app = Flask(__name__)
 
 @app.route('/data.html')
 def data():
+    base= """
+    <!DOCTYPE html>
+        <html>
+        <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").hide();
+            });
+        });
+        </script>
+        </head>
+        <body>
+        %s
+        </body>
+        </html>
+    """
     with open('/home/pi/Gyroscope_Project/data.csv') as fin:
         data= fin.readline()
         text_td= " "
@@ -30,7 +48,7 @@ def data():
         </tr>
         </table>
         """.format(text_td)
-        return text_data
+        return base%(text_data)
 
 @app.route('/get_data.json')
 def get_data():
