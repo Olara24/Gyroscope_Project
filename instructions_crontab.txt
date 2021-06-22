@@ -1,0 +1,10 @@
+Instructions for execute reading.py automatically every minute.
+
+	Step 1: Open a terminal on linux
+	Step 2: Write crontab-e on terminal
+	Step 3: Select an editor. I recomend to use the option 1)/bin/nano
+	Step 4: Copy the example given in the instruction and paste
+	Step 5: Modified the line code to * * * * * python /archive reading.py route >> /archive data.csv route
+	Step 6: Save with the name given by default and close
+	Step 7: The reading.py archive is going to be execute every minute and stored the lectures on data.csv
+ 
