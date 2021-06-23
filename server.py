@@ -10,12 +10,13 @@ def data():
         <html>
         <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
         <script>
-        $(document).ready(function(){
-            $("button").click(function(){
-                $("p").hide();
-            });
-        });
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+            } );
         </script>
         </head>
         <body>
@@ -32,7 +33,7 @@ def data():
             text_td+="<tr> <td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td> </tr>".format(Gx,Gy,Gz,Ax,Ay,Az)
            
         text_data= """
-        <table> 
+        <table id="table_id" class="display">
 
         <tr>
         <th scope="col">Gx</th>
