@@ -72,5 +72,5 @@ while True:
 	Gz = gyro_z/131.0
 	
 
-	print ("{0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}, {0:.2f}".format(Gx, Gy, Gz, Ax, Ay, Az))
+	print ("{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f}".format(Gx, Gy, Gz, Ax, Ay, Az))
 	sleep(1)
